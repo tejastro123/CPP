@@ -1,7 +1,7 @@
-#include <iostream>
-#include <vector>
-#include<algorithm>
-using namespace std;
+// #include <iostream>
+// #include <vector>
+// #include<algorithm>
+// using namespace std;
 
 //MERGE SORTED ARRAYS problem
 // void merge(vector<int>& nums1, int m, vector<int>& nums2, int n){
@@ -45,45 +45,45 @@ rearranged as the lowest possible order (i.e., sorted in ascending order).*/
   2) find right most element > pivot, swap(RME,pivot)
   3) reverse(pivot+1)to(n-1) dec-->inc
 */
-// use next_permutation(nums.begin(), nums.end()); 
-void nextPermutation(vector<int>& nums){
-    // 1st step : find pivot
-    int n = nums.size();
-    int piv = -1;
-    for(int i = n - 2; i >= 0; i--){
-        if(nums[i] < nums[i + 1]) {
-            piv = i;
-            break;
-        }
-    }
-    if(piv == -1){//in place changes
-        reverse(nums.begin(), nums.end());
-        return;
-    }
+//use next_permutation(nums.begin(), nums.end()); 
+// void nextPermutation(vector<int>& nums){
+//     // 1st step : find pivot
+//     int n = nums.size();
+//     int piv = -1;
+//     for(int i = n - 2; i >= 0; i--){
+//         if(nums[i] < nums[i + 1]) {
+//             piv = i;
+//             break;
+//         }
+//     }
+//     if(piv == -1){//in place changes
+//         reverse(nums.begin(), nums.end());
+//         return;
+//     }
      
-    // 2nd step : next larger element
-    for(int i = n - 1; i > piv ; i--){
-        if(nums[i] > nums[piv]) {
-            swap(nums[i],nums[piv]);
-            break;
-        }
-    }
+//     // 2nd step : next larger element
+//     for(int i = n - 1; i > piv ; i--){
+//         if(nums[i] > nums[piv]) {
+//             swap(nums[i],nums[piv]);
+//             break;
+//         }
+//     }
 
-    // 3rd step : reverse (piv+1 to n-1)
-    // reverse(nums.begin() + piv+1 , nums.end() );
-    int i = piv+1;
-    int j = n-1;
-    while(i<=j){
-        swap(nums[i],nums[j]);
-        i++; j--;
-    }
-}
-
-
+//     // 3rd step : reverse (piv+1 to n-1)
+//     // reverse(nums.begin() + piv+1 , nums.end() );
+//     int i = piv+1;
+//     int j = n-1;
+//     while(i<=j){
+//         swap(nums[i],nums[j]);
+//         i++; j--;
+//     }
+// }
 
 
-int main()
-{
+
+
+// int main()
+// {
     // vector<int> nums1 = {1, 2, 3, 0, 0, 0};
     // int m = 3;
     // vector<int> nums2 = {2, 5, 6};
@@ -94,11 +94,11 @@ int main()
     //     cout << nums1[i] << " ";
     // }
 
-    vector<int> nums = {1, 2, 3};
-    int n = nums.size();
-    nextPermutation(nums);
-    for (int i = 0; i < n; i++) {
-        cout << nums[i] << " ";
-    }
+//     vector<int> nums = {1, 2, 3};
+//     int n = nums.size();
+//     nextPermutation(nums);
+//     for (int i = 0; i < n; i++) {
+//         cout << nums[i] << " ";
+//     }
 
-}
+// }
