@@ -14,11 +14,10 @@ int main()
     vec.pop_back();
  
     for(int val : vec){
-        cout<< val<< " ";
+        cout<< val;
     }
-    cout<< vec.front();
-    cout<< vec.back();
-    cout<< vec.at(0);
+    cout<< vec.front()<<endl;
+    cout<< vec.back()<<endl;
     return 0;
 }
     
