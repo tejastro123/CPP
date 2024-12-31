@@ -10,7 +10,7 @@ int main()
 {
     vector<int> vec = {1,2,3,4}; //size=0
     vec.push_back(5) ;
-    vec.emplace_back(6);
+    vec.emplace_back(6); 
     vec.pop_back();
  
     for(int val : vec){
