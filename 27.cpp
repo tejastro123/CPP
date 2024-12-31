@@ -5,16 +5,20 @@ using namespace std;
 /*1.containers 2.iterators 3.algorithms 4.functors*/
 
 //VECTOR (dynamic & resize)
+/*size & capacity , push_back & pop_back , emplace_back , at() or[] , front & back*/
 int main()
 {
-    vector<int> vec; //size=0
+    vector<int> vec = {1,2,3,4}; //size=0
     vec.push_back(5) ;
-    vec.push_back(1);
-    cout<< vec.size();
     vec.emplace_back(6);
+    vec.pop_back();
+ 
     for(int val : vec){
         cout<< val<< " ";
     }
-
+    cout<< vec.front();
+    cout<< vec.back();
+    cout<< vec.at(0);
+    return 0;
 }
     
