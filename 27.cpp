@@ -10,6 +10,11 @@ int main()
     vector<int> vec; //size=0
     vec.push_back(5) ;
     vec.push_back(1);
-    cout<< vec.size()<<endl;
+    cout<< vec.size();
+    vec.emplace_back(6);
+    for(int val : vec){
+        cout<< val<< " ";
+    }
+
 }
     
