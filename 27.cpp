@@ -9,6 +9,7 @@ int main()
 {
     vector<int> vec; //size=0
     vec.push_back(5) ;
+    vec.push_back(1);
     cout<< vec.size()<<endl;
 }
     
