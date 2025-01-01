@@ -236,3 +236,22 @@ using namespace std;
 //     cout<<m.at(2)<<endl; // if key not found it will throw an exception
 //     cout<<m.count(1)<<endl; // count of key 1 in the map
 // }
+
+//SET
+int main()
+{
+    set<int> s;
+    s.insert(1);
+    s.insert(5);
+    s.insert(3);
+    s.insert(2);
+    for(auto p:s){
+        cout<<p<<endl;
+    }
+    s.erase(3);
+    for(auto p:s){
+        cout<<p<<endl;
+    }
+    
+ 
+}
