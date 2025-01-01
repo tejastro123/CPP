@@ -252,6 +252,5 @@ int main()
     for(auto p:s){
         cout<<p<<endl;
     }
-    
- 
+
 }
