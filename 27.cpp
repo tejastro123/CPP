@@ -8,6 +8,8 @@
 #include<unordered_map>
 #include<set>
 #include<unordered_set>
+#include<algorithm>
+
 
 using namespace std;
 
@@ -238,19 +240,126 @@ using namespace std;
 // }
 
 //SET
+/*insert,emplace,count,erase,lower_bound,upper_bound,find,empty*/
+/*set is a multiset with no duplicate values*/
+/*it stores elements in sorted(ascending) order*/
+// int main()
+// {
+//     set<int> s;
+//     s.insert(1);
+//     s.insert(5);
+//     s.insert(3);
+//     s.insert(2);
+//     for(auto p:s){
+//     cout<<p<<endl;
+//     }
+//     // s.erase(3);
+//     // for(auto p:s){
+//     //     cout<<p<<endl;
+//     // }
+//     cout<<*(s.upper_bound(3))<<endl; //UB returns iterator pointing to the first element greater than 3
+//     cout<<*(s.lower_bound(3))<<endl; //LB returns iterator pointing to the first element greater than or equal to 3
+
+// }
+
+//MULTI-SET & UNORDERED SET
+/*insert,emplace,count,erase,lower_bound,upper_bound,find,empty*/
+/*multiset is a set with duplicate values*/
+/*it stores elements in sorted(ascending) order*/
+// int main()
+// {
+//     multiset<int> s;
+//     s.insert(1);
+//     s.insert(5);
+//     s.insert(3);
+//     s.insert(2);
+//     s.insert(3);
+//     s.insert(1);
+//     s.insert(5);
+//     for(auto p:s){
+//     cout<<p<<endl;
+//     }
+//     s.erase(3);
+//     for(auto p:s){
+//         cout<<p<<endl;
+//     }
+//     cout<<*(s.upper_bound(3))<<endl; //UB returns iterator pointing to the first element greater than 3
+//     cout<<*(s.lower_bound(3))<<endl; //LB returns iterator pointing to the first element greater than or equal to 3
+// same for unordered-set
+// }
+
+
+
+//ALGORITHMS
+
+//1.SORTING
+/* sort( arr,arr+n ) - ascending order
+   sort( arr,arr+n,greater<int>() ) - descending order
+   sort( v.begin(),v.end() )*/
+
+// bool comparator(pair<int,int>p1,pair<int,int>p2){ //costum comparators
+//     if( p1.second < p2.second ) return true;
+//     if( p1.second > p2.second ) return false;
+
+//     if(p1.first<p2.first) return true;
+//     else return false; 
+// }
+// int main()
+// {
+//     int arr[5] = {5,2,8,1,9};
+//     sort(arr,arr+5);
+//     for(int v:arr){
+//         cout<<v<<endl;
+//     }
+
+//     vector<int> vec = {5,2,8,1,9};
+//     sort(vec.begin(),vec.end());
+//     for(int v:vec){
+//         cout<<v<<endl;
+//     }
+//     sort(vec.begin(),vec.end(),greater<int>());
+//     for(int v:vec){
+//         cout<<v<<endl;
+//     }
+
+//     vector<pair<int,int>> vec = { {3,1},{2,1},{7,1},{5,2}};
+//     sort(vec.begin(),vec.end(),comparator);
+
+//     for(auto p:vec){
+//         cout<<p.first<<" "<<p.second<<endl;
+//     }
+// }
+
+//2.REVERSE
+// int main()
+// {
+//     vector<int> v = {1,2,3,4,5};
+//     reverse(v.begin(),v.end());
+//     for(int v:v){
+//         cout<<v<<endl;
+//     }
+// }
+
+//3.NEXT_PERMUTATION
+// int main()
+// {
+//     vector<int> v = {135};
+//     next_permutation(v.begin(),v.end());
+//     for(int v:v){
+//         cout<<v<<endl;
+//     }
+// }
+
+//4. swap,min,max = swap(),max_element(v.begin(),v.end()),min_element(v.begin(),v.end())
+//5. binary search = binary_search(v.begin(),v.end(),target)
+/*6. count set bits = __builtin_popcount(v) , __builtin_popcountl(v), __builtin_popcountll(v)*/
 int main()
 {
-    set<int> s;
-    s.insert(1);
-    s.insert(5);
-    s.insert(3);
-    s.insert(2);
-    for(auto p:s){
-        cout<<p<<endl;
-    }
-    s.erase(3);
-    for(auto p:s){
-        cout<<p<<endl;
-    }
+    int n =15;
+    long int m = 15;
+    long long int r = 15;
 
+    cout << __builtin_popcount(n) << endl;
+    cout << __builtin_popcountl(m) << endl;
+    cout << __builtin_popcountll(r) << endl;
 }
