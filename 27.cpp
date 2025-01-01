@@ -1,17 +1,17 @@
-#include <iostream>
-#include <vector>
-#include <list>
-#include<deque>
-#include<stack>
-#include<queue>
-#include<map>
-#include<unordered_map>
-#include<set>
-#include<unordered_set>
-#include<algorithm>
+// #include <iostream>
+// #include <vector>
+// #include <list>
+// #include<deque>
+// #include<stack>
+// #include<queue>
+// #include<map>
+// #include<unordered_map>
+// #include<set>
+// #include<unordered_set>
+// #include<algorithm>
 
 
-using namespace std;
+// using namespace std;
 
 //C++ & STL(standard template library)
 /*1.containers 2.iterators 3.algorithms 4.functors*/
@@ -353,13 +353,15 @@ using namespace std;
 //4. swap,min,max = swap(),max_element(v.begin(),v.end()),min_element(v.begin(),v.end())
 //5. binary search = binary_search(v.begin(),v.end(),target)
 /*6. count set bits = __builtin_popcount(v) , __builtin_popcountl(v), __builtin_popcountll(v)*/
-int main()
-{
-    int n =15;
-    long int m = 15;
-    long long int r = 15;
+// int main()
+// {
+//     int n =15;
+//     long int m = 15;
+//     long long int r = 15;
 
-    cout << __builtin_popcount(n) << endl;
-    cout << __builtin_popcountl(m) << endl;
-    cout << __builtin_popcountll(r) << endl;
-}
+//     cout << __builtin_popcount(n) << endl;
+//     cout << __builtin_popcountl(m) << endl;
+//     cout << __builtin_popcountll(r) << endl;
+//
+// }
+
