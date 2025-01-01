@@ -212,27 +212,27 @@ using namespace std;
 //MULTI-MAP & UNORDERED-MAP
 //can not use [] , nor random access 
 //tc of insert,erase,find,count is O(1) in unordered_map
-int main()
-{
-    // multimap<int, string> m;
-    // m.insert({1, "apple"});
-    // m.insert({2, "banana"});
-    // m.insert({1, "cherry"});
-    // m.insert({3, "cherry"});
-    // m.erase(m.find(1));
-    // for(auto p:m){
-    //     cout<<p.first<<" "<<p.second<<endl;
-    // }
-    unordered_map<int, string> m;
-    m.insert({1, "apple"});
-    m.insert({2, "banana"});
-    m.insert({1, "cherry"});
-    m.insert({3, "cherry"});
-    m.erase(m.find(1));
-    for(auto p:m){
-        cout<<p.first<<" "<<p.second<<endl;
-    }
-    cout<<m[3]<<endl; // if key not found it will return default value of type string which is "" in this case
-    cout<<m.at(2)<<endl; // if key not found it will throw an exception
-    cout<<m.count(1)<<endl; // count of key 1 in the map
-}
+// int main()
+// {
+//     multimap<int, string> m;
+//     m.insert({1, "apple"});
+//     m.insert({2, "banana"});
+//     m.insert({1, "cherry"});
+//     m.insert({3, "cherry"});
+//     m.erase(m.find(1));
+//     for(auto p:m){
+//       cout<<p.first<<" "<<p.second<<endl;
+//     }
+//     unordered_map<int, string> m;
+//     m.insert({1, "apple"});
+//     m.insert({2, "banana"});
+//     m.insert({1, "cherry"});
+//     m.insert({3, "cherry"});
+//     m.erase(m.find(1));
+//     for(auto p:m){
+//         cout<<p.first<<" "<<p.second<<endl;
+//     }
+//     cout<<m[3]<<endl; // if key not found it will return default value of type string which is "" in this case
+//     cout<<m.at(2)<<endl; // if key not found it will throw an exception
+//     cout<<m.count(1)<<endl; // count of key 1 in the map
+// }
