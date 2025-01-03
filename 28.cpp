@@ -1,11 +1,13 @@
 //STRINGS IN C++
 
-#include<iostream>
-#include<string>
-using namespace std;
+// #include<iostream>
+// #include<string>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
 
-int main()
-{
+// int main()
+// {
     // char str[] = "tejas.m";
     // cout<< str<<endl;
 
@@ -40,16 +42,38 @@ int main()
     // getline(cin,str1);
     // cout<<str1<<endl;
 
-    string str1="tejas";
-    string str2="mellimpudi";
-    string str3=str1+str2;
-    cout<<str3<<endl;
-    cout<< (str1==str2) <<endl;
-    cout<< (str1!=str2) <<endl;
-    cout<< (str1<str2) <<endl;
-    cout<< (str1>str2) <<endl;
-    
+    // string str1="tejas";
+    // string str2="mellimpudi";
+    // string str3=str1+str2;
+    // cout<<str3<<endl;
+    // cout<<str3.length()<<endl;
+    // for(char ch:str3){
+    //     cout<<ch<<" ";
+    // }
 
-    return 0;
+    // cout<<str3.substr(6,5)<<endl;
+    // cout<<str3.find("melli")<<endl;
+    // cout<<str3.replace(6,5,"m")<<endl;
+    // cout<< (str1==str2) <<endl;
+    // cout<< (str1!=str2) <<endl;
+    // cout<< (str1<str2) <<endl;
+    // cout<< (str1>str2) <<endl;
 
-}
+    //reverse a character array
+    // char s[] = "tejas";
+    // int n = sizeof(s) / sizeof(s[0]);
+    // int st=0,e=n-1;
+    // while(st<e){
+    //     swap(s[st],s[e]);
+    //     st++; e--;
+    // }
+    // for(char ch:s){
+    //     cout<<ch<<" ";
+    // }
+
+    // //reverse a string
+    // string str = "tejas";
+    // reverse(str.begin(),str.end());
+    // cout<<str<<endl;
+    // return 0;
+// }
