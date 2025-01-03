@@ -1,9 +1,9 @@
 //VALID PALINDROME
 
-#include<iostream>
-#include<string>
-#include<algorithm>
-using namespace std;
+// #include<iostream>
+// #include<string>
+// #include<algorithm>
+// using namespace std;
 
 // bool isAlphanum(char ch){
 //     if((ch>='0' && ch<='9') || (tolower(ch)>='a' && tolower(ch)<='z')){
@@ -51,15 +51,15 @@ using namespace std;
 // }
 
 // remove all occurrences of a part of string
-string removePart(string s, string part){
-    while(s.length() > 0 && s.find(part)<s.length()){
-        s.erase(s.find(part), part.length());
-    }
-    return s;
-}
+// string removePart(string s, string part){
+//     while(s.length() > 0 && s.find(part)<s.length()){
+//         s.erase(s.find(part), part.length());
+//     }
+//     return s;
+// }
 
-int main() 
-{
+// int main() 
+// {
     // string s;
     // cout<<"Enter a string: ";
     // cin >> s;
@@ -81,4 +81,4 @@ int main()
     // string modifiedStr = removePart(s, part);
     // cout << "Modified string: " << modifiedStr << endl;
     
-}
+// }
