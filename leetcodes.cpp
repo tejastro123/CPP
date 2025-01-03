@@ -5,8 +5,9 @@ Input: l1 = [2,4,3], l2 = [5,6,4]
 Output: [7,0,8]
 Explanation: 342 + 465 = 807.
 code in cpp*/
-#include<iostream>
-using namespace std;
+
+// #include<iostream>
+// using namespace std;
 // struct ListNode {
 //     int val;
 //     ListNode *next;
@@ -101,4 +102,70 @@ using namespace std;
 //     return 0;
 // }
 
-/**/
+
+// reverse words in a string
+// #include<iostream>
+// #include<string>
+// #include<algorithm>
+// using namespace std;
+
+// string reverseString(string str)
+// {
+//     reverse(str.begin(), str.end());  // Reverse str using inbuilt function
+//     str.insert(str.end(), ' ');// Add space at the end so that the last word is also reversed
+    
+//     int n = str.length();
+//     int j = 0;
+//     // Find spaces and reverse all words
+//     // before that
+//     for (int i = 0; i < n; i++) {
+//         if (str[i] == ' ') { // If a space is encountered
+//             reverse(str.begin() + j, str.begin() + i);
+//             j = i + 1;// Update the starting index for next word to reverse
+//         }
+//     }
+//     str.pop_back();// Remove spaces from the end of the word that we appended
+//     return str;// Return the reversed string
+// }
+
+// Function to remove multiple spaces from a string and leave one space between words in a string  // Using STL library's remove and erase functions
+// string removeExtraSpaces(string str){
+//     str.erase(remove(str.begin(), str.end(), ' '), str.end());
+//     return str;
+// }
+
+// int main()
+// {
+//     string str = "tejas is good boy";
+//     cout << reverseString(str) << endl;
+//     cout << removeExtraSpaces(str) << endl;
+// }
+
+
+// A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+// Given a string s, return true if it is a palindrome, or false otherwise
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// bool isPalindrome(string s) {
+//     int left = 0;
+//     int right = s.length() - 1;
+//     while (left < right) {
+//         // Ignore non-alphanumeric characters from left
+//         while (left < right && !isalnum(s[left])) {
+//             left++;
+//         }
+//         // Ignore non-alphanumeric characters from right
+//         while (left < right && !isalnum(s[right])) {
+//             right--;
+//         }
+//         // Compare characters at left and right
+//         if (tolower(s[left]) != tolower(s[right])) {
+//             return false;
+//         }
+//         left++;
+//         right--;
+//     }
+//     return true;
+// }

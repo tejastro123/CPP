@@ -71,9 +71,18 @@
     //     cout<<ch<<" ";
     // }
 
-    // //reverse a string
+    // //function that reverse a string normally
+    // void reverse(char s[]){
+    //     int n = sizeof(s) / sizeof(s[0]);
+    //     int st=0,e=n-1;
+    //     while(st<e){
+    //         swap(s[st],s[e]);
+    //         st++; e--;
+    //     }
+    // }
     // string str = "tejas";
     // reverse(str.begin(),str.end());
     // cout<<str<<endl;
     // return 0;
-// }
+//}
+
