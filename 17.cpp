@@ -16,7 +16,7 @@ it is only applied on sorted arrays(asc/des)*/
 //     return -1;
 // }
 
-//recursion method - SC=O(1) & TC=O(logn)
+// //recursion method - SC=O(1) & TC=O(logn)
 // int binary_search(int arr[], int n, int target, int st, int en){
 //     if(st>en) return -1;
 //     int mid = st + (en-st) / 2;
@@ -31,7 +31,6 @@ it is only applied on sorted arrays(asc/des)*/
 // int main()
 // {
 //     int arr[] = {1, 2, 3, 4, 5};
-//     int arr[]={-1,0,3,5,9,12};
 //     int n = sizeof(arr)/sizeof(arr[0]);
 //     int target;
 //     int st = arr[0];
