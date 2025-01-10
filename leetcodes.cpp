@@ -169,3 +169,69 @@ code in cpp*/
 //     }
 //     return true;
 // }
+
+/*Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
+Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
+Change the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.
+Return k.*/
+//c++code
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+// int removeElement(int nums[], int numsSize, int val) {
+//     int k = 0;
+//     for (int i = 0; i < numsSize; i++) {
+//         if (nums[i] != val) {
+//             nums[k++] = nums[i];
+//         }
+//     }
+//     return k;
+// }
+//  int main()
+//  {
+//     int nums[] = {3,2,2,3};
+//     int val = 3;
+//     int numsSize = sizeof(nums)/sizeof(nums[0]);
+//     int k = removeElement(nums, numsSize, val);
+//     cout << k << endl;
+//     return 0;
+//  }
+
+
+/*Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
+Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things:
+Change the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially. The remaining elements of nums are not important as well as the size of nums.
+Return k.*/
+//c++ code
+// #include <iostream>
+// #include <vector>
+// #include <algorithm>
+// #include <string>
+// using namespace std;
+// int removeDuplicates(vector<int> &nums){
+//     sort(nums.begin(), nums.end());
+//     if(nums.empty()) return 0;
+//     int k = 1;
+//     int n = nums.size();
+//     for(int i = 1; i < n ; i++){
+//         if(nums[i]!= nums[i-1]){
+//             nums[k++] = nums[i];
+//         }
+//     }
+//     return k;
+// }
+// int main()
+// {
+//     vector<int> nums = {1,1,2,3,2,};
+//     int k = removeDuplicates(nums);
+//     cout << "Number of unique elements: " << k << endl;
+//     for(int i = 0; i < k; i++){
+//         cout << nums[i] << " ";
+//     }
+//     return 0;
+// }
+
+
