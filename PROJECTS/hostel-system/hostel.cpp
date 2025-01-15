@@ -1,150 +1,144 @@
 #include <iostream>
 #include <fstream>
-#include <windows.h>
 #include <sstream>
+#include <string>
+#include <limits>
 using namespace std;
 
-class Hostel{
+class Hostel {
 private:
- string Name;
-int Rent, Bed;
+    string name;
+    int rent;
+    int bedsAvailable;
+
 public:
-Hostel(string name, int rent, int bed){
- Name = name;
- Rent = rent;
- Bed = bed;	
-}
+    Hostel(const string& hostelName, int hostelRent, int totalBeds)
+        : name(hostelName), rent(hostelRent), bedsAvailable(totalBeds) {}
 
-string getName(){
-return Name;
-}
+    string getName() const {
+        return name;
+    }
 
-int getRent(){
- return Rent;
-}
+    int getRent() const {
+        return rent;
+    }
 
-int getBed(){
- return Bed;
-}
+    int getBedsAvailable() const {
+        return bedsAvailable;
+    }
 
-inline int reserve(){
-ifstream in("D:/Hostel.txt");
-ofstream out("D:/Hostel Temp.txt");
+    bool reserveBed() {
+        if (bedsAvailable > 0) {
+            bedsAvailable--;
+            saveToFile();
+            cout << "\tBed reserved successfully!" << endl;
+            return true;
+        } else {
+            cout << "\tSorry, no beds available!" << endl;
+            return false;
+        }
+    }
 
-string line;
-while(getline(in,line)){
-int pos = line.find("3star");
-if (pos != std::string::npos){
-int bed = Bed-1;
-Bed = bed;
-
-stringstream ss;
-ss<<bed;
-string strBed = ss.str();
-
-int bedPos = line.find_last_of(':');
-line.replace(bedPos+1, string::npos, strBed);
-}
-out<<line<<endl;
-}
-out.close();
-in.close();
-remove("D:/Hostel.txt");
-rename("D:/Hostel Temp.txt", "D:/Hostel.txt");
-cout<<"\tBed Reserved Successfuly!"<<endl;
-return Bed;
-}
+    void saveToFile() const {
+        ofstream outFile("Hostel.txt");
+        if (outFile) {
+            outFile << name << " : " << rent << " : " << bedsAvailable << endl;
+        } else {
+            cerr << "Error: Unable to save hostel data!" << endl;
+        }
+    }
 };
 
-class Student{
+class Student {
 private:
-string Name, RollNo, Address;
+    string name;
+    string rollNo;
+    string address;
+
 public:
-Student():Name(""), RollNo(""),Address(""){}
+    void setDetails(const string& studentName, const string& studentRollNo, const string& studentAddress) {
+        name = studentName;
+        rollNo = studentRollNo;
+        address = studentAddress;
+    }
 
-int setName(string name){
-Name = name;
-    return 1;
-}
-
-int setRollNo(string rollNo){
- RollNo = rollNo;
- return 1;
-}
-
-int setAddress(string address){
- Address = address;
- return 1;
-}
-
-
-string getName(){
-	return Name;
-}
-
-string getRollNo(){
-	return RollNo;
-}
-
-string getAddress(){
-	return Address;
-}
-
+    void saveToFile() const {
+        ofstream outFile("Student.txt", ios::app);
+        if (outFile) {
+            outFile << name << " : " << rollNo << " : " << address << endl;
+        } else {
+            cerr << "Error: Unable to save student data!" << endl;
+        }
+    }
 };
 
-int main(){
-Hostel h("3star", 5000, 2);
-ofstream out("D:/Hostel.txt");
-out<<"\t"<<h.getName()<<" : "<<h.getRent()<<" : "<<h.getBed()<<endl<<endl;
-cout<<"Hostel Data Saved"<<endl;
-out.close();
-
-Student s;
-
-bool exit = false;
-while(!exit){
-	system("cls");
- int val;
-cout<<"\tWelcome To Hostel Accommodation System"<<endl;
-cout<<"\t**************************************"<<endl;
-cout<<"\t1.Reserve A Bed."<<endl;
-cout<<"\t2.Exit."<<endl;
-cout<<"\tEnter Choice: ";
-cin>>val;
-
-if(val==1){
-system("cls");
-string name,rollNo, address;
-cout<<"\tEnter Name of Student: ";
-cin>>name;
-s.setName(name);
-
-cout<<"\tEnter RollNo of Student: ";
-cin>>rollNo;
-s.setRollNo(rollNo);
-
-cout<<"\tEnter Address of Student: ";
-cin>>address;
-s.setAddress(address);
-
-if(h.getBed() > 0){
-h.reserve();
+void clearScreen() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
 }
 
-else if(h.getBed() ==0){
-cout<<"\tSorry, Bed Not Available!"<<endl;
-}
-ofstream outFile("D:/Student.txt", ios::app);
-outFile<<"\t"<<s.getName()<<" : "<<s.getRollNo()<<" : "<<s.getAddress()<<endl<<endl;
-Sleep(5000);
-}
-
-else if(val==2){
-system("cls");
-exit = true;
-cout<<"Good Luck!"<<endl;
-Sleep(3000);
-}
-}
+void displayMenu() {
+    cout << "\tWelcome to Hostel Accommodation System" << endl;
+    cout << "\t**************************************" << endl;
+    cout << "\t1. Reserve a Bed" << endl;
+    cout << "\t2. Exit" << endl;
+    cout << "\tEnter your choice: ";
 }
 
+int main() {
+    Hostel hostel("3star", 5000, 2);
+    hostel.saveToFile();
+
+    bool exit = false;
+    while (!exit) {
+        clearScreen();
+        displayMenu();
+
+        int choice;
+        cin >> choice;
+
+        if (cin.fail() || choice < 1 || choice > 2) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "\tInvalid input. Please try again." << endl;
+            continue;
+        }
+
+        if (choice == 1) {
+            clearScreen();
+
+            string studentName, rollNo, address;
+            cout << "\tEnter student name: ";
+            cin.ignore(); // Clear buffer
+            getline(cin, studentName);
+
+            cout << "\tEnter roll number: ";
+            getline(cin, rollNo);
+
+            cout << "\tEnter address: ";
+            getline(cin, address);
+
+            Student student;
+            student.setDetails(studentName, rollNo, address);
+
+            if (hostel.getBedsAvailable() > 0) {
+                if (hostel.reserveBed()) {
+                    student.saveToFile();
+                }
+            } else {
+                cout << "\tSorry, no beds are available!" << endl;
+            }
+
+            cout << "\tPress Enter to continue...";
+            cin.get();
+        } else if (choice == 2) {
+            exit = true;
+            cout << "\tThank you for using the system. Goodbye!" << endl;
+        }
+    }
+
+    return 0;
+}
