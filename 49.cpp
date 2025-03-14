@@ -14,11 +14,13 @@ numbers is different.*/
 using namespace std;
 
 set<vector<int>> s;
+
 void getallcomb(vector<int>& arr, int idx, int tar, vector<vector<int>>& ans,vector<int>&combin)
 {
     int n = arr.size();
-    if(idx==n || tar<0)
+    if(idx== n || tar<0){
         return;
+    }
 
     if(tar==0){
         if(s.find(combin)==s.end()){
@@ -30,18 +32,32 @@ void getallcomb(vector<int>& arr, int idx, int tar, vector<vector<int>>& ans,vec
 
     combin.push_back(arr[idx]);
     //single
-    getallcomb(arr, idx+1, tar-arr[idx], ans,combin);
+    getallcomb(arr,idx+1,tar-arr[idx],ans,combin);
     //multiple
-    getallcomb(arr, idx, tar-arr[idx], ans, combin);
+    getallcomb(arr,idx,tar-arr[idx],ans,combin);
+    combin.pop_back();
+
     //exclusion
-    getallcomb(arr, idx+1, tar, ans, combin);
+    getallcomb(arr,idx+1,tar,ans,combin);
 }
 
 vector<vector<int>> combinationSum(vector<int>& arr, int target)
 {
-    sort(arr.begin(), arr.end());
+    sort(arr.begin(),arr.end()); // sort the array for efficient search
     vector<vector<int>> ans;
     vector<int> combin;
     getallcomb(arr, 0, target, ans, combin);
     return ans;
+}
+
+int main(){
+    vector<int> nums = {2,3,6,7};
+    int target = 7;
+    vector<vector<int>> result = combinationSum(nums, target);
+    for(auto subset: result){
+        for(int num: subset)
+            cout << num << " ";
+        cout << endl;
+    }
+    return 0;
 }
