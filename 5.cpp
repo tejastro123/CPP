@@ -1,4 +1,4 @@
-//FUNCTIONS//
+// FUNCTIONS
 
 // #include<iostream>
 // using namespace std;
@@ -48,47 +48,47 @@
 
 // }
 
-//problems
+// problems
 
-// #include<iostream>
-// using namespace std;
+#include<iostream>
+using namespace std;
 
-// int SumOfDigits(int n)
-// {
-//     int sum = 0;
-//     while(n!=0)
-//     {
-//         sum += n % 10;
-//         n /= 10;
-//     }
-//         return sum;
-// }
-// int factorial(int n)
-// {
-//     int fact = 1;
-//     for(int i=1; i<=n; i++)
-//     {
-//         fact *= i;
-//     }
-//     return fact;
-// }
-// int nCr(int n, int r)
-// {
-//    int fact_n = factorial(n);
-//    int fact_r = factorial(r);
-//    int fact_n_r = factorial(n - r); 
-//    return fact_n / (fact_r * fact_n_r);
-// }
+int SumOfDigits(int n)
+{
+    int sum = 0;
+    while(n!=0)
+    {
+        sum += n % 10;
+        n /= 10;
+    }
+        return sum;
+}
+int factorial(int n)
+{
+    int fact = 1;
+    for(int i=1; i<=n; i++)
+    {
+        fact *= i;
+    }
+    return fact;
+}
+int nCr(int n, int r)
+{
+   int fact_n = factorial(n);
+   int fact_r = factorial(r);
+   int fact_n_r = factorial(n - r); 
+   return fact_n / (fact_r * fact_n_r);
+}
 
-// int main()
-// {
-//     int n;
-//     cout<<"Enter a number: ";
-//     cin>>n;
-     //cout<<"Sum of digits: "<<SumOfDigits(n)<<endl;
-     //cout<<"Factorial of "<<n<<" is: "<<factorial(n)<<endl;
-//     int r;
-//     cout<<"Enter r: ";
-//     cin>>r;
-//     cout<<"nCr("<<n<<","<<r<<"): "<<nCr(n, r)<<endl;    
-// }
+int main()
+{
+    int n;
+    cout<<"Enter a number: ";
+    cin>>n;
+     cout<<"Sum of digits: "<<SumOfDigits(n)<<endl;
+     cout<<"Factorial of "<<n<<" is: "<<factorial(n)<<endl;
+    int r;
+    cout<<"Enter r: ";
+    cin>>r;
+    cout<<"nCr("<<n<<","<<r<<"): "<<nCr(n, r)<<endl;    
+}
