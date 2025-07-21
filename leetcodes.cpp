@@ -175,11 +175,11 @@ Consider the number of elements in nums which are not equal to val be k, to get 
 Change the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.
 Return k.*/
 //c++code
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <string>
-using namespace std;
+// #include <iostream>
+// #include <vector>
+// #include <algorithm>
+// #include <string>
+// using namespace std;
 
 // int removeElement(int nums[], int numsSize, int val) {
 //     int k = 0;
