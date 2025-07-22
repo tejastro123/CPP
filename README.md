@@ -1,8 +1,8 @@
-# C++-DSA-COURSE
+# C++
 
 Overview
 
-A well-organized collection of DSA problems with solutions in C++, Python. Topics include arrays, trees, graphs, DP, and system design concepts.
+A well-organized collection of problems with solutions in C++, Python.
 
 Tech Stack
 
